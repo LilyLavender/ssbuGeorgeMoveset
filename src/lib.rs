@@ -1,45 +1,29 @@
-#![feature(concat_idents)]
-#![feature(proc_macro_hygiene)]
-#![allow(unused_imports)]
-#![allow(unused_parens)]
-#![allow(unused_macros)]
-#![allow(unused_variables)]
-#![allow(dead_code)]
-#![allow(non_upper_case_globals)]
+#![feature(
+    concat_idents,
+    proc_macro_hygiene
+)]
+#![allow(
+    unused_imports,
+	unused_macros,
+	unused_variables,
+	unused_assignments,
+	unused_unsafe,
+	non_upper_case_globals,
+	non_snake_case,
+    clippy::borrow_interior_mutable_const
+)]
 
 mod normals;
-//jab
-//dtilt
-//utilt
-//ftilt
-//dash
-
 mod smashes;
-//fsmash
-//dsmash
-//usmash
-
 mod aerials;
-//nair
-//uair
-//dair
-//fair
-//bair
-
 mod throws;
-//grab
-//bthrow
-//fthrow
-//uthrow
-//dthrow
+mod specials;
 
-mod monado;
-
-#[skyline::main(name = "smashline_test")]
+#[skyline::main(name = "george_moveset")]
 pub fn main() {
 	normals::install();
 	smashes::install();
 	aerials::install();
 	throws::install();
-	monado::install();
+	specials::install();
 }
